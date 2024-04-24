@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     int server_fd;
     struct sockaddr_in server_addr;
 
-    // create server socket
+    // server socket
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("socket failed");
         exit(EXIT_FAILURE);
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    // listen for connections
+    // listen connections
     if (listen(server_fd, 10) < 0) {
         perror("listen failed");
         exit(EXIT_FAILURE);
